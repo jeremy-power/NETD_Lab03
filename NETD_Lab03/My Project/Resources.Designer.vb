@@ -71,6 +71,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property explosion() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("explosion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property Fire() As System.Drawing.Bitmap
@@ -187,6 +196,15 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Stars30_4", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property woosh() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("woosh", resourceCulture)
             End Get
         End Property
     End Module

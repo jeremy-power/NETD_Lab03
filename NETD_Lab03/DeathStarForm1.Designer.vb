@@ -42,9 +42,25 @@ Partial Class DeathStarForm1
         Me.pnlTitle = New System.Windows.Forms.Panel()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.gbxPlayMode = New System.Windows.Forms.GroupBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.lblComplete = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lblDestroyed = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblShotsTaken = New System.Windows.Forms.Label()
+        Me.lblOf = New System.Windows.Forms.Label()
+        Me.lblCompleteInfo = New System.Windows.Forms.Label()
+        Me.lblDestroyedInfo = New System.Windows.Forms.Label()
+        Me.lblShotsTakenInfo = New System.Windows.Forms.Label()
+        Me.lblYPlay = New System.Windows.Forms.Label()
+        Me.lblXPlay = New System.Windows.Forms.Label()
+        Me.nudPlayY = New System.Windows.Forms.NumericUpDown()
+        Me.nudPlayX = New System.Windows.Forms.NumericUpDown()
+        Me.pbxFire = New System.Windows.Forms.PictureBox()
+        Me.pbxHelp = New System.Windows.Forms.PictureBox()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnReset = New System.Windows.Forms.Button()
+        Me.cbxSound = New System.Windows.Forms.CheckBox()
         CType(Me.dgvBattlefield, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxSetup.SuspendLayout()
         CType(Me.nudYCoord, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,7 +68,14 @@ Partial Class DeathStarForm1
         CType(Me.nudPlanetNum, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudMaxShots, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTitle.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbxPlayMode.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.nudPlayY, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudPlayX, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxFire, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxHelp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvBattlefield
@@ -233,6 +256,8 @@ Partial Class DeathStarForm1
         Me.nudPlanetNum.BackColor = System.Drawing.Color.Black
         Me.nudPlanetNum.ForeColor = System.Drawing.Color.White
         Me.nudPlanetNum.Location = New System.Drawing.Point(97, 81)
+        Me.nudPlanetNum.Maximum = New Decimal(New Integer() {225, 0, 0, 0})
+        Me.nudPlanetNum.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudPlanetNum.Name = "nudPlanetNum"
         Me.nudPlanetNum.Size = New System.Drawing.Size(64, 38)
         Me.nudPlanetNum.TabIndex = 1
@@ -244,6 +269,8 @@ Partial Class DeathStarForm1
         Me.nudMaxShots.BackColor = System.Drawing.Color.Black
         Me.nudMaxShots.ForeColor = System.Drawing.Color.White
         Me.nudMaxShots.Location = New System.Drawing.Point(97, 37)
+        Me.nudMaxShots.Maximum = New Decimal(New Integer() {225, 0, 0, 0})
+        Me.nudMaxShots.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudMaxShots.Name = "nudMaxShots"
         Me.nudMaxShots.Size = New System.Drawing.Size(64, 38)
         Me.nudMaxShots.TabIndex = 0
@@ -274,6 +301,18 @@ Partial Class DeathStarForm1
         'gbxPlayMode
         '
         Me.gbxPlayMode.BackColor = System.Drawing.Color.Transparent
+        Me.gbxPlayMode.Controls.Add(Me.Panel3)
+        Me.gbxPlayMode.Controls.Add(Me.Panel2)
+        Me.gbxPlayMode.Controls.Add(Me.Panel1)
+        Me.gbxPlayMode.Controls.Add(Me.lblOf)
+        Me.gbxPlayMode.Controls.Add(Me.lblCompleteInfo)
+        Me.gbxPlayMode.Controls.Add(Me.lblDestroyedInfo)
+        Me.gbxPlayMode.Controls.Add(Me.lblShotsTakenInfo)
+        Me.gbxPlayMode.Controls.Add(Me.lblYPlay)
+        Me.gbxPlayMode.Controls.Add(Me.lblXPlay)
+        Me.gbxPlayMode.Controls.Add(Me.nudPlayY)
+        Me.gbxPlayMode.Controls.Add(Me.nudPlayX)
+        Me.gbxPlayMode.Controls.Add(Me.pbxFire)
         Me.gbxPlayMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbxPlayMode.ForeColor = System.Drawing.Color.White
         Me.gbxPlayMode.Location = New System.Drawing.Point(547, 312)
@@ -283,15 +322,165 @@ Partial Class DeathStarForm1
         Me.gbxPlayMode.TabStop = False
         Me.gbxPlayMode.Text = "Play Mode"
         '
-        'PictureBox1
+        'Panel3
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.help48
-        Me.PictureBox1.Location = New System.Drawing.Point(566, 184)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(45, 46)
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel3.Controls.Add(Me.lblComplete)
+        Me.Panel3.Location = New System.Drawing.Point(351, 135)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(129, 39)
+        Me.Panel3.TabIndex = 21
+        '
+        'lblComplete
+        '
+        Me.lblComplete.AutoSize = True
+        Me.lblComplete.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblComplete.Location = New System.Drawing.Point(0, 0)
+        Me.lblComplete.Name = "lblComplete"
+        Me.lblComplete.Size = New System.Drawing.Size(29, 31)
+        Me.lblComplete.TabIndex = 0
+        Me.lblComplete.Text = "0"
+        '
+        'Panel2
+        '
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel2.Controls.Add(Me.lblDestroyed)
+        Me.Panel2.Location = New System.Drawing.Point(351, 90)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(70, 39)
+        Me.Panel2.TabIndex = 20
+        '
+        'lblDestroyed
+        '
+        Me.lblDestroyed.AutoSize = True
+        Me.lblDestroyed.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblDestroyed.Location = New System.Drawing.Point(0, 0)
+        Me.lblDestroyed.Name = "lblDestroyed"
+        Me.lblDestroyed.Size = New System.Drawing.Size(29, 31)
+        Me.lblDestroyed.TabIndex = 0
+        Me.lblDestroyed.Text = "0"
+        '
+        'Panel1
+        '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.lblShotsTaken)
+        Me.Panel1.Location = New System.Drawing.Point(351, 44)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(70, 39)
+        Me.Panel1.TabIndex = 19
+        '
+        'lblShotsTaken
+        '
+        Me.lblShotsTaken.AutoSize = True
+        Me.lblShotsTaken.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblShotsTaken.Location = New System.Drawing.Point(0, 0)
+        Me.lblShotsTaken.Name = "lblShotsTaken"
+        Me.lblShotsTaken.Size = New System.Drawing.Size(29, 31)
+        Me.lblShotsTaken.TabIndex = 0
+        Me.lblShotsTaken.Text = "0"
+        Me.lblShotsTaken.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblOf
+        '
+        Me.lblOf.AutoSize = True
+        Me.lblOf.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOf.Location = New System.Drawing.Point(434, 49)
+        Me.lblOf.Name = "lblOf"
+        Me.lblOf.Size = New System.Drawing.Size(25, 20)
+        Me.lblOf.TabIndex = 18
+        Me.lblOf.Text = "of"
+        '
+        'lblCompleteInfo
+        '
+        Me.lblCompleteInfo.AutoSize = True
+        Me.lblCompleteInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCompleteInfo.Location = New System.Drawing.Point(228, 147)
+        Me.lblCompleteInfo.Name = "lblCompleteInfo"
+        Me.lblCompleteInfo.Size = New System.Drawing.Size(105, 20)
+        Me.lblCompleteInfo.TabIndex = 17
+        Me.lblCompleteInfo.Text = "% Complete"
+        '
+        'lblDestroyedInfo
+        '
+        Me.lblDestroyedInfo.AutoSize = True
+        Me.lblDestroyedInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDestroyedInfo.Location = New System.Drawing.Point(228, 102)
+        Me.lblDestroyedInfo.Name = "lblDestroyedInfo"
+        Me.lblDestroyedInfo.Size = New System.Drawing.Size(91, 20)
+        Me.lblDestroyedInfo.TabIndex = 16
+        Me.lblDestroyedInfo.Text = "Destroyed"
+        '
+        'lblShotsTakenInfo
+        '
+        Me.lblShotsTakenInfo.AutoSize = True
+        Me.lblShotsTakenInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblShotsTakenInfo.Location = New System.Drawing.Point(228, 51)
+        Me.lblShotsTakenInfo.Name = "lblShotsTakenInfo"
+        Me.lblShotsTakenInfo.Size = New System.Drawing.Size(110, 20)
+        Me.lblShotsTakenInfo.TabIndex = 15
+        Me.lblShotsTakenInfo.Text = "Shots Taken"
+        '
+        'lblYPlay
+        '
+        Me.lblYPlay.AutoSize = True
+        Me.lblYPlay.ForeColor = System.Drawing.Color.Gold
+        Me.lblYPlay.Location = New System.Drawing.Point(125, 49)
+        Me.lblYPlay.Name = "lblYPlay"
+        Me.lblYPlay.Size = New System.Drawing.Size(32, 31)
+        Me.lblYPlay.TabIndex = 14
+        Me.lblYPlay.Text = "Y"
+        '
+        'lblXPlay
+        '
+        Me.lblXPlay.AutoSize = True
+        Me.lblXPlay.ForeColor = System.Drawing.Color.Gold
+        Me.lblXPlay.Location = New System.Drawing.Point(6, 49)
+        Me.lblXPlay.Name = "lblXPlay"
+        Me.lblXPlay.Size = New System.Drawing.Size(32, 31)
+        Me.lblXPlay.TabIndex = 13
+        Me.lblXPlay.Text = "X"
+        '
+        'nudPlayY
+        '
+        Me.nudPlayY.Location = New System.Drawing.Point(163, 46)
+        Me.nudPlayY.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
+        Me.nudPlayY.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nudPlayY.Name = "nudPlayY"
+        Me.nudPlayY.ReadOnly = True
+        Me.nudPlayY.Size = New System.Drawing.Size(59, 38)
+        Me.nudPlayY.TabIndex = 12
+        Me.nudPlayY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.nudPlayY.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'nudPlayX
+        '
+        Me.nudPlayX.Location = New System.Drawing.Point(44, 46)
+        Me.nudPlayX.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
+        Me.nudPlayX.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nudPlayX.Name = "nudPlayX"
+        Me.nudPlayX.Size = New System.Drawing.Size(59, 38)
+        Me.nudPlayX.TabIndex = 11
+        Me.nudPlayX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.nudPlayX.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'pbxFire
+        '
+        Me.pbxFire.Image = Global.WindowsApplication1.My.Resources.Resources.Fire1
+        Me.pbxFire.Location = New System.Drawing.Point(77, 90)
+        Me.pbxFire.Name = "pbxFire"
+        Me.pbxFire.Size = New System.Drawing.Size(97, 96)
+        Me.pbxFire.TabIndex = 0
+        Me.pbxFire.TabStop = False
+        '
+        'pbxHelp
+        '
+        Me.pbxHelp.BackColor = System.Drawing.Color.Transparent
+        Me.pbxHelp.Image = Global.WindowsApplication1.My.Resources.Resources.help48
+        Me.pbxHelp.Location = New System.Drawing.Point(566, 184)
+        Me.pbxHelp.Name = "pbxHelp"
+        Me.pbxHelp.Size = New System.Drawing.Size(45, 46)
+        Me.pbxHelp.TabIndex = 4
+        Me.pbxHelp.TabStop = False
         '
         'btnExit
         '
@@ -317,21 +506,35 @@ Partial Class DeathStarForm1
         Me.btnReset.Text = "Reset"
         Me.btnReset.UseVisualStyleBackColor = False
         '
+        'cbxSound
+        '
+        Me.cbxSound.AutoSize = True
+        Me.cbxSound.BackColor = System.Drawing.Color.Transparent
+        Me.cbxSound.ForeColor = System.Drawing.Color.White
+        Me.cbxSound.Location = New System.Drawing.Point(504, 585)
+        Me.cbxSound.Name = "cbxSound"
+        Me.cbxSound.Size = New System.Drawing.Size(57, 17)
+        Me.cbxSound.TabIndex = 16
+        Me.cbxSound.Text = "Sound"
+        Me.cbxSound.UseVisualStyleBackColor = False
+        '
         'DeathStarForm1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.BattleDeathstar
         Me.ClientSize = New System.Drawing.Size(1093, 666)
+        Me.Controls.Add(Me.cbxSound)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.btnExit)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.pbxHelp)
         Me.Controls.Add(Me.gbxPlayMode)
         Me.Controls.Add(Me.pnlTitle)
         Me.Controls.Add(Me.gbxSetup)
         Me.Controls.Add(Me.dgvBattlefield)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DeathStarForm1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Deathstar Wars"
         CType(Me.dgvBattlefield, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbxSetup.ResumeLayout(False)
@@ -342,8 +545,20 @@ Partial Class DeathStarForm1
         CType(Me.nudMaxShots, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlTitle.ResumeLayout(False)
         Me.pnlTitle.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbxPlayMode.ResumeLayout(False)
+        Me.gbxPlayMode.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.nudPlayY, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudPlayX, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxFire, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxHelp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -363,10 +578,26 @@ Partial Class DeathStarForm1
     Friend WithEvents pnlTitle As Panel
     Friend WithEvents lblTitle As Label
     Friend WithEvents gbxPlayMode As GroupBox
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pbxHelp As PictureBox
     Friend WithEvents btnPlay As Button
     Friend WithEvents btnAddPlanet As Button
     Friend WithEvents btnRandomPlanets As Button
     Friend WithEvents btnExit As Button
     Friend WithEvents btnReset As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents lblShotsTaken As Label
+    Friend WithEvents lblOf As Label
+    Friend WithEvents lblCompleteInfo As Label
+    Friend WithEvents lblDestroyedInfo As Label
+    Friend WithEvents lblShotsTakenInfo As Label
+    Friend WithEvents lblYPlay As Label
+    Friend WithEvents lblXPlay As Label
+    Friend WithEvents nudPlayY As NumericUpDown
+    Friend WithEvents nudPlayX As NumericUpDown
+    Friend WithEvents pbxFire As PictureBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents lblComplete As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents lblDestroyed As Label
+    Friend WithEvents cbxSound As CheckBox
 End Class

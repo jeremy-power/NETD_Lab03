@@ -78,6 +78,12 @@
     <Compile Include="DeathStarForm1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmHelp.Designer.vb">
+      <DependentUpon>frmHelp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -97,6 +103,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DeathStarForm1.resx">
       <DependentUpon>DeathStarForm1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelp.resx">
+      <DependentUpon>frmHelp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -158,6 +167,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\deathstar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\explosion.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woosh.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
